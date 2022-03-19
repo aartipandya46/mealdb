@@ -41,7 +41,6 @@ function App() {
         }
       </table>
 
-
       <table border="1" width="50%">
         {mealByName && Object.entries(mealByName).map(([key, value]) => {
           return <tr><td>{key}</td><td>{value}</td></tr>
