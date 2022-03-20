@@ -24,11 +24,19 @@ function App() {
 
   return (
     <div>
+      <span>Enter Recipe </span>
       <input type="text" value={name} onChange={(e) => handleChange(e)} />
       <button type="button" onClick={() => handleClick()}>search</button>
       <br />
-
-      <table border="1" width="50%">
+      <br />
+    <div  style={{display:"block"}}>
+      <table border="1" width="50%"  style={{float:"left"}}>
+        <tr>
+          <th>Id</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Thumbnail</th>
+        </tr>
         {
           categories && categories.map((c) => {
             return <tr>
@@ -40,13 +48,16 @@ function App() {
           })
         }
       </table>
+      </div>
 
-      <table border="1" width="50%">
+      <div  style={{display:"block"}}>
+      <table border="1" width="50%" style={{float:"right"}}>
         {mealByName && Object.entries(mealByName).map(([key, value]) => {
           return <tr><td>{key}</td><td>{value}</td></tr>
         })}
       </table >
 
+      </div>
     </div>
   );
 }
